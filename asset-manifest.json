@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/tatianakonovalova.github.io/foodify-app/static/css/main.0555392c.css",
-    "main.js": "/tatianakonovalova.github.io/foodify-app/static/js/main.9c26ffdc.js",
+    "main.js": "/tatianakonovalova.github.io/foodify-app/static/js/main.c7b3fa3d.js",
     "static/media/ArturoTrial-HeavyOutline.ttf": "/tatianakonovalova.github.io/foodify-app/static/media/ArturoTrial-HeavyOutline.b24b811513188db93f39.ttf",
     "static/media/ArturoTrial-HeavyOutline.woff": "/tatianakonovalova.github.io/foodify-app/static/media/ArturoTrial-HeavyOutline.d38e35d2b16798072a8c.woff",
     "static/media/ArturoTrial-HeavyOutline.woff2": "/tatianakonovalova.github.io/foodify-app/static/media/ArturoTrial-HeavyOutline.d7be3c454997c27f82c4.woff2",
     "index.html": "/tatianakonovalova.github.io/foodify-app/index.html",
     "main.0555392c.css.map": "/tatianakonovalova.github.io/foodify-app/static/css/main.0555392c.css.map",
-    "main.9c26ffdc.js.map": "/tatianakonovalova.github.io/foodify-app/static/js/main.9c26ffdc.js.map"
+    "main.c7b3fa3d.js.map": "/tatianakonovalova.github.io/foodify-app/static/js/main.c7b3fa3d.js.map"
   },
   "entrypoints": [
     "static/css/main.0555392c.css",
-    "static/js/main.9c26ffdc.js"
+    "static/js/main.c7b3fa3d.js"
   ]
 }
