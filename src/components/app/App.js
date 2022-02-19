@@ -76,7 +76,7 @@ class App extends Component {
         <div className="App">
           <Header active={active} />
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/foodify-app">
               <RecipeCard recipe={recipe} fetchRandomRecipe={this.updateRecipe} saveDish={this.onSaveDish} active={active} />
             </Route>
             <Route exact path="/favourites">

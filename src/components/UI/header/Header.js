@@ -12,7 +12,7 @@ class Header extends Component {
                 <h1 style={{fontFamily: "Arturo"}}> The Foodify</h1>
                 <h2>Delicious food for every mood</h2>
                 <div className='buttons'>
-                    <Link className="button" to="/">Random</Link>
+                    <Link className="button" to="/foodify-app">Random</Link>
                     <Link className="button" to="/favourites"> Favourites <FontAwesomeIcon icon={faHeart} className={this.props.active ? "heart active" : ''} /></Link>
                 </div>
             </header>
