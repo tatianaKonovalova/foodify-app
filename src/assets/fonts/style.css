@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Arturo';
+    src: local('Arturo Heavy Outline'), local('Arturo-Heavy-Outline'),
+        url('ArturoTrial-HeavyOutline.woff2') format('woff2'),
+        url('ArturoTrial-HeavyOutline.woff') format('woff'),
+        url('ArturoTrial-HeavyOutline.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+  }

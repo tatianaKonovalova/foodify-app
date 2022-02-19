@@ -1,0 +1,63 @@
+.recipe-card {
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    padding: 15px;
+    max-width: 850px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+}
+
+.buttons {
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 400px;
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    padding: 20px;
+    background: none;
+    border: 1px solid black;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+button[disabled]:hover {
+    transform: none;
+}
+
+@media (max-width: 930px) and (min-width: 470px) {
+    .recipe-card {
+        max-width: 430px;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 469px) {
+    .recipe-card {
+        max-width: 300px;
+        padding: 5px;
+    }
+
+    .buttons {
+        width: 300px;
+        margin-top: 15px;
+    }
+
+    button {
+        padding: 15px;
+        font-size: 22px;
+    }
+}
