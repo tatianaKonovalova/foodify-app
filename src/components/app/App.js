@@ -50,7 +50,7 @@ class App extends Component {
     this.setState(({savedDishes}) => ({
       savedDishes: [...savedDishes, newDish],
       active: true,
-    }), this.saveData)
+    }), this.saveData);
   }
 
   onDishSaved = () => {
@@ -64,7 +64,9 @@ class App extends Component {
       dishImg: '',
       dishName: recipeName
     }
-    this.onSaveDish(newCustomDish);
+    this.setState(({savedDishes}) => ({
+      savedDishes: [...savedDishes, newCustomDish],
+    }), this.saveData);
   }
 
   render() {

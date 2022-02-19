@@ -12,7 +12,7 @@
 }
 
 .image {
-    width: 400px;
+    width: 350px;
 }
 
 .image img {
@@ -26,17 +26,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    max-width: 400px;
+    max-width: 350px;
 }
 
 .dish-info {
-    padding: 20px;
+    padding: 0 10px;
     font-family: 'Roboto';
     font-weight: 300;
-    font-size: 20px;
+    font-size: 18px;
 }
 
-@media (max-width: 930px) and (min-width: 470px) {
+.dish-name {
+    margin: 5px 0;
+}
+
+@media (max-width: 930px) and (min-width: 469px) {
     .recipe-container-row {
         flex-direction: column;
     }

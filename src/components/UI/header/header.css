@@ -1,32 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Roboto:wght@300;500&display=swap');
 
 h1 {
-    font-size: 92px;
+    font-size: 76px;
     margin: 0;
-    margin-top: 60px;
+    margin-top: 40px;
     text-align: center;
-    padding: 10px;
+    padding: 0 10px;
 }
 
 h2 {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    font-size: 42px;
+    font-size: 36px;
     margin: 0;
     text-align: center;
-    padding: 10px;
-}
-
-.buttons {
-    margin: 0 auto;
-    margin-top: 30px;
-    width: 400px;
-    display: flex;
-    justify-content: space-around;
+    padding: 0 10px;
 }
 
 .button {
-    padding: 20px;
+    padding: 10px 20px;
     background: none;
     border: 1px solid black;
     font-family: 'Roboto';
@@ -58,21 +50,6 @@ h2 {
     }
     100% {
         color: black;
-    }
-}
-
-@media (max-width: 930px) and (min-width: 470px) {
-    h1 {
-        font-size: 76px;
-    }
-
-    h2 {
-        font-size: 36px;
-        margin: 0 10px;
-    }
-
-    .buttons {
-        margin-top: 10px;
     }
 }
 
