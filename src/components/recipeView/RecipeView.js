@@ -1,10 +1,7 @@
-import { Component } from 'react';
 import './recipeView.css';
 import thumb from '../../assets/img/not-found.png';
 
-class RecipeView extends Component {
-  render() {
-    const {recipe, column} = this.props;
+function RecipeView ({recipe, column}) {
     const {dishImg, dishDescr, dishName} = recipe;
     let thumbnail = !dishImg ? thumb : dishImg;
     return (
@@ -20,7 +17,6 @@ class RecipeView extends Component {
         </div>
       </div>
     )
-  }
 }
 export default RecipeView;
 

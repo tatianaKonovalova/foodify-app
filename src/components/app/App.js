@@ -1,4 +1,4 @@
-import {Component} from 'react';
+import {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import FoodifyService from '../../FoodifyService';
 
@@ -6,87 +6,76 @@ import Header from "../UI/header/Header";
 import RecipeCard from "../recipeCard/RecipeCard";
 import FavouritesPage from '../favouritesPage/FavouritesPage';
 
+function App() {
+  const [recipe, setRecipe] = useState({});
+  const [savedDishes, setSavedDishes] = useState(JSON.parse(window.sessionStorage.getItem('savedDishes')) || []);
+  const [localStorageData, setLocalStorageData] = useState(JSON.parse(window.localStorage.getItem('savedDishes')) || []);
+  const [active, setActive] = useState(false);
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      recipe: {},
-      savedDishes: JSON.parse(window.sessionStorage.getItem('savedDishes')) || [],
-      localStorageData: JSON.parse(window.localStorage.getItem('savedDishes')) || [],
-      active: false,
-    }
+  const foodifyService = new FoodifyService();
 
-  }
-  foodifyService = new FoodifyService();
-  
-  componentDidMount() {
-    this.updateRecipe();
+  useEffect(() => {
+    updateRecipe();
+  }, [])
+
+  const onRecipeLoaded = (recipe) => {
+    setRecipe(recipe);
   }
 
-  onRecipeLoaded = (recipe) => {
-    this.setState({recipe});
+  const updateRecipe = async () => {
+    foodifyService.getRandomRecipe().then(onRecipeLoaded);
+    onDishSaved();
   }
 
-  updateRecipe = async () => {
-    this.foodifyService.getRandomRecipe().then(this.onRecipeLoaded);
-    this.onDishSaved();
+  const saveToSessionStorage = () => {
+    window.sessionStorage.setItem('savedDishes', JSON.stringify(savedDishes));
   }
 
-  saveToSessionStorage = () => {
-    window.sessionStorage.setItem('savedDishes', JSON.stringify(this.state.savedDishes));
+  const saveToLocalStorage = () => {
+    window.localStorage.setItem('savedDishes', JSON.stringify([...localStorageData, ...savedDishes]));
   }
 
-  saveToLocalStorage = () => {
-    window.localStorage.setItem('savedDishes', JSON.stringify([...this.state.localStorageData, ...this.state.savedDishes]));
+  const saveData = () => {
+    saveToSessionStorage();
+    saveToLocalStorage();
   }
 
-  saveData = () => {
-    this.saveToSessionStorage();
-    this.saveToLocalStorage();
+  const onSaveDish = (newDish) => {
+    setSavedDishes([...savedDishes, newDish]);
+    setActive(true);
+    saveData();
   }
 
-  onSaveDish = (newDish) => {
-    this.setState(({savedDishes}) => ({
-      savedDishes: [...savedDishes, newDish],
-      active: true,
-    }), this.saveData);
+  const onDishSaved = () => {
+    setActive(false);
   }
 
-  onDishSaved = () => {
-    this.setState({active: false});
-  }
-
-  onRecipeAdd = (recipeName, recipeInstruction) => {
+  const onRecipeAdd = (recipeName, recipeInstruction) => {
     const newCustomDish = {
       dishDescr: recipeInstruction,
       dishId: Date.now(),
       dishImg: '',
       dishName: recipeName
     }
-    this.setState(({savedDishes}) => ({
-      savedDishes: [...savedDishes, newCustomDish],
-    }), this.saveData);
+    setSavedDishes([...savedDishes, newCustomDish]);
+    saveData();
   }
 
-  render() {
-    const {recipe, savedDishes, active} = this.state;
     return (
       <Router>
         <div className="App">
           <Header active={active} />
           <Switch>
             <Route exact path="/">
-              <RecipeCard recipe={recipe} fetchRandomRecipe={this.updateRecipe} saveDish={this.onSaveDish} active={active} />
+              <RecipeCard recipe={recipe} fetchRandomRecipe={updateRecipe} saveDish={onSaveDish} active={active} />
             </Route>
             <Route exact path="/favourites">
-              <FavouritesPage savedDishes={savedDishes} addCustomRecipe={this.onRecipeAdd} />
+              <FavouritesPage savedDishes={savedDishes} addCustomRecipe={onRecipeAdd} />
             </Route>
           </Switch>
         </div>
       </Router>
     );
-  }
 }
 
 export default App;

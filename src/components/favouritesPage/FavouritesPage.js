@@ -1,32 +1,26 @@
-import { Component } from "react";
+import { useState } from "react";
 import FavouriteDishesList from "../favouriteDishesList/FavouriteDishesList";
 import CreateRecipeModal from "../createRecipeModal/CreateRecipeModal";
 
 import './favouritesPage.css';
 
-class FavouritesPage extends Component {
-    state = {
-        openModal: false,
-    }
+function FavouritesPage ({addCustomRecipe, savedDishes}) {
+    const [openModal, setModal] = useState(false);
 
-    onModalOpen = () => {
-        this.setState(({openModal}) => ({
-            openModal: !openModal
-        }));
+    const onModalOpen = () => {
+        setModal(!openModal);
     }
  
-    render() {
-        return (
-            <div className="favourites__page">
-                <button className="create__button" onClick={this.onModalOpen}>Create Recipe</button>
-                <CreateRecipeModal 
-                    addCustomRecipe={this.props.addCustomRecipe} 
-                    visible={this.state.openModal} 
-                    toggleModal={this.onModalOpen} />
-                <FavouriteDishesList savedDishes={this.props.savedDishes} />
-            </div>
-        )
-    }
+    return (
+        <div className="favourites__page">
+            <button className="create__button" onClick={onModalOpen}>Create Recipe</button>
+            <CreateRecipeModal 
+                addCustomRecipe={addCustomRecipe} 
+                visible={openModal} 
+                toggleModal={onModalOpen} />
+            <FavouriteDishesList savedDishes={savedDishes} />
+        </div>
+    )
 }
 
 export default FavouritesPage;
