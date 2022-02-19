@@ -82,6 +82,9 @@ class App extends Component {
             <Route exact path="/favourites">
               <FavouritesPage savedDishes={savedDishes} addCustomRecipe={this.onRecipeAdd} />
             </Route>
+            <Route path="*">
+              <RecipeCard recipe={recipe} fetchRandomRecipe={this.updateRecipe} saveDish={this.onSaveDish} active={active} />
+            </Route>
           </Switch>
         </div>
       </Router>
