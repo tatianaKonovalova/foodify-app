@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.bac7daaa.css",
-    "main.js": "/static/js/main.9c26ffdc.js",
-    "static/media/ArturoTrial-HeavyOutline.ttf": "/static/media/ArturoTrial-HeavyOutline.b24b811513188db93f39.ttf",
-    "static/media/ArturoTrial-HeavyOutline.woff": "/static/media/ArturoTrial-HeavyOutline.d38e35d2b16798072a8c.woff",
-    "static/media/ArturoTrial-HeavyOutline.woff2": "/static/media/ArturoTrial-HeavyOutline.d7be3c454997c27f82c4.woff2",
-    "index.html": "/index.html",
-    "main.bac7daaa.css.map": "/static/css/main.bac7daaa.css.map",
-    "main.9c26ffdc.js.map": "/static/js/main.9c26ffdc.js.map"
+    "main.css": "/foodify-app/static/css/main.0eaa4542.css",
+    "main.js": "/foodify-app/static/js/main.a24bafa6.js",
+    "static/media/ArturoTrial-HeavyOutline.ttf": "/foodify-app/static/media/ArturoTrial-HeavyOutline.b24b811513188db93f39.ttf",
+    "static/media/ArturoTrial-HeavyOutline.woff": "/foodify-app/static/media/ArturoTrial-HeavyOutline.d38e35d2b16798072a8c.woff",
+    "static/media/ArturoTrial-HeavyOutline.woff2": "/foodify-app/static/media/ArturoTrial-HeavyOutline.d7be3c454997c27f82c4.woff2",
+    "index.html": "/foodify-app/index.html",
+    "main.0eaa4542.css.map": "/foodify-app/static/css/main.0eaa4542.css.map",
+    "main.a24bafa6.js.map": "/foodify-app/static/js/main.a24bafa6.js.map"
   },
   "entrypoints": [
-    "static/css/main.bac7daaa.css",
-    "static/js/main.9c26ffdc.js"
+    "static/css/main.0eaa4542.css",
+    "static/js/main.a24bafa6.js"
   ]
 }
