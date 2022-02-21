@@ -18,6 +18,10 @@ function App() {
     updateRecipe();
   }, [])
 
+  useEffect(() => {
+    saveData();
+  }, [savedDishes])
+
   const onRecipeLoaded = (recipe) => {
     setRecipe(recipe);
   }
@@ -43,7 +47,6 @@ function App() {
   const onSaveDish = (newDish) => {
     setSavedDishes([...savedDishes, newDish]);
     setActive(true);
-    saveData();
   }
 
   const onDishSaved = () => {
@@ -58,7 +61,6 @@ function App() {
       dishName: recipeName
     }
     setSavedDishes([...savedDishes, newCustomDish]);
-    saveData();
   }
 
     return (
